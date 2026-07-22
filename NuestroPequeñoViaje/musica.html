@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Those Eyes ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(135deg,#020617,#172554,#312e81);
+    color:white;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+
+}
+
+
+/* estrellas */
+
+.estrellas{
+
+    position:fixed;
+    width:100%;
+    height:100%;
+    z-index:0;
+
+}
+
+
+.estrella{
+
+    position:absolute;
+    color:white;
+    animation:brillar 3s infinite ease-in-out;
+    opacity:.4;
+
+}
+
+
+@keyframes brillar{
+
+    0%{
+        opacity:.2;
+        transform:scale(.8);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.4);
+    }
+
+    100%{
+        opacity:.2;
+        transform:scale(.8);
+    }
+
+}
+
+
+/* corazones */
+
+.corazon{
+
+    position:absolute;
+    bottom:-30px;
+    font-size:25px;
+    animation:subir 7s linear infinite;
+
+}
+
+
+@keyframes subir{
+
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+
+}
+
+
+/* tarjeta */
+
+.contenedor{
+
+    position:relative;
+    z-index:2;
+    width:90%;
+    max-width:750px;
+    text-align:center;
+    background:rgba(255,255,255,.08);
+    padding:45px;
+    border-radius:30px;
+    backdrop-filter:blur(12px);
+    box-shadow:0 0 40px rgba(255,255,255,.2);
+
+    animation:entrada 1.5s ease;
+
+}
+
+
+h1{
+
+    font-size:45px;
+    margin-bottom:25px;
+
+}
+
+
+p{
+
+    font-size:22px;
+    line-height:1.8;
+    margin-bottom:25px;
+
+}
+
+
+.cancion{
+
+    font-size:32px;
+    color:#ffd6ff;
+    margin:25px;
+
+}
+
+
+
+audio{
+
+    width:100%;
+    margin:25px 0;
+
+}
+
+
+
+button{
+
+    padding:15px 35px;
+    border:none;
+    border-radius:30px;
+    font-size:18px;
+    cursor:pointer;
+
+}
+
+
+
+button:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+
+@keyframes entrada{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="estrellas" id="estrellas"></div>
+
+
+
+<div class="contenedor">
+
+
+<h1>🎵 Una canción especial ❤️</h1>
+
+
+<div class="cancion">
+
+Those Eyes - New West ✨
+
+</div>
+
+
+<p>
+
+Hay canciones que simplemente escuchas...
+
+pero hay otras que se quedan contigo.
+
+</p>
+
+
+<p>
+
+Cada vez que escucho esta canción,
+me acuerdo mucho de ti.
+Tiene algo que me hace pensar en los momentos bonitos
+y en lo especial que eres para mí. ❤️
+
+</p>
+
+
+<p>
+
+Quería que esta canción formara parte de este pequeño viaje,
+porque para mí tiene un significado muy especial. 🌙
+
+</p>
+
+
+
+<!-- thoseeyes.mp3 -->
+
+<audio controls>
+
+<source src="thoseeyes.mp3" type="audio/mpeg">
+
+</audio>
+
+
+
+<a href="aniversario.html">
+
+<button>
+
+❤️ Ya casi llegamos...
+
+</button>
+
+</a>
+
+
+</div>
+
+
+
+<script>
+
+
+const estrellas=document.getElementById("estrellas");
+
+
+for(let i=0;i<100;i++){
+
+let estrella=document.createElement("div");
+
+estrella.className="estrella";
+
+estrella.innerHTML="✦";
+
+estrella.style.left=Math.random()*100+"vw";
+
+estrella.style.top=Math.random()*100+"vh";
+
+estrella.style.fontSize=(8+Math.random()*15)+"px";
+
+estrella.style.animationDelay=Math.random()*3+"s";
+
+
+estrellas.appendChild(estrella);
+
+}
+
+
+
+
+function crearCorazon(){
+
+let corazon=document.createElement("div");
+
+corazon.className="corazon";
+
+corazon.innerHTML="❤️";
+
+corazon.style.left=Math.random()*100+"vw";
+
+corazon.style.animationDuration=(4+Math.random()*5)+"s";
+
+
+document.body.appendChild(corazon);
+
+
+setTimeout(()=>{
+
+corazon.remove();
+
+},8000);
+
+
+}
+
+
+setInterval(crearCorazon,900);
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Nuestros Recuerdos ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#111827, #374151);
+    color: white;
+    text-align: center;
+    animation: aparecer 1.5s ease;
+}
+
+h1 {
+    margin-top: 40px;
+    font-size: 40px;
+}
+
+.album {
+     width:80%;
+    max-width:500px;
+    margin:50px auto;
+    background:rgba(255,255,255,.08);
+    padding:25px;
+    border-radius:25px;
+    backdrop-filter:blur(10px);
+    transition:.4s;
+}
+
+.album:hover{
+    transform:translateY(-8px);
+}
+
+.album img {
+    width: 100%;
+    border-radius: 15px;
+    transition: 0.4s;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,.4);
+}
+
+.album img:hover{
+    transform: scale(1.04);
+    box-shadow:0 15px 40px rgba(255,255,255,.25);
+}
+
+.texto {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+button {
+    padding: 12px 25px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+@keyframes aparecer {
+    from {
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>📖 Nuestro Álbum de Recuerdos ❤️</h1>
+
+<p style="font-size:20px;color:#ddd;">
+Cada fotografía guarda un momento que nunca quiero olvidar.
+</p>
+
+<div class="album">
+    <img src="foto1.jpg">
+    <p class="texto">
+    Un momento que siempre voy a recordar ❤️
+    </p>
+</div>
+
+
+<a href="index.html">
+<button>Volver ❤️</button>
+</a>
+ <a href="mensaje.html">
+        <button>❤️ Aún hay algo más...</button>
+    </a>
+
+</div>
+
+</body>
+</html>

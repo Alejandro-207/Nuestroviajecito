@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Te llegó una carta ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+    background:linear-gradient(135deg,#020617,#312e81,#4c1d95);
+    color:white;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+
+}
+
+
+/* estrellas */
+
+.estrella{
+
+    position:absolute;
+    color:white;
+    animation:brillar 3s infinite ease-in-out;
+    opacity:.4;
+
+}
+
+
+@keyframes brillar{
+
+    0%{
+        opacity:.2;
+        transform:scale(.8);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.3);
+    }
+
+    100%{
+        opacity:.2;
+        transform:scale(.8);
+    }
+
+}
+
+
+/* corazones */
+
+.corazon{
+
+    position:absolute;
+    bottom:-20px;
+    font-size:25px;
+    animation:subir 6s linear infinite;
+
+}
+
+
+@keyframes subir{
+
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+
+}
+
+
+/* sobre */
+
+.contenedor{
+
+    text-align:center;
+    z-index:2;
+    animation:entrada 1.5s ease;
+
+}
+
+
+h1{
+
+    font-size:42px;
+    margin-bottom:40px;
+
+}
+
+
+.sobre{
+
+    width:260px;
+    height:170px;
+    background:#f8d7da;
+    margin:auto;
+    border-radius:15px;
+    position:relative;
+    box-shadow:0 0 40px rgba(255,255,255,.3);
+    animation:flotar 3s infinite ease-in-out;
+
+}
+
+
+/* triangulo del sobre */
+
+.sobre:before{
+
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+
+    border-left:130px solid transparent;
+    border-right:130px solid transparent;
+    border-top:90px solid #f1a7b8;
+
+}
+
+
+
+.corazonSobre{
+
+    position:absolute;
+    top:65px;
+    left:110px;
+    font-size:45px;
+
+}
+
+
+
+button{
+
+    margin-top:50px;
+    padding:15px 35px;
+    border:none;
+    border-radius:40px;
+    font-size:18px;
+    cursor:pointer;
+
+}
+
+
+button:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+
+@keyframes flotar{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+
+
+@keyframes entrada{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="contenedor">
+
+
+<h1>✉️ Te llegó una carta ❤️</h1>
+
+
+<div class="sobre">
+
+<div class="corazonSobre">
+❤️
+</div>
+
+</div>
+
+
+
+<a href="carta.html">
+
+<button>
+
+💌 Abrir sobre
+
+</button>
+
+</a>
+
+
+</div>
+
+
+
+
+<script>
+
+
+for(let i=0;i<80;i++){
+
+let estrella=document.createElement("div");
+
+estrella.className="estrella";
+
+estrella.innerHTML="✦";
+
+estrella.style.left=Math.random()*100+"vw";
+
+estrella.style.top=Math.random()*100+"vh";
+
+estrella.style.fontSize=(8+Math.random()*15)+"px";
+
+estrella.style.animationDelay=Math.random()*3+"s";
+
+
+document.body.appendChild(estrella);
+
+}
+
+
+
+function crearCorazon(){
+
+let corazon=document.createElement("div");
+
+corazon.className="corazon";
+
+corazon.innerHTML="❤️";
+
+corazon.style.left=Math.random()*100+"vw";
+
+
+document.body.appendChild(corazon);
+
+
+
+setTimeout(()=>{
+
+corazon.remove();
+
+},6000);
+
+
+}
+
+
+setInterval(crearCorazon,900);
+
+
+
+</script>
+
+
+</body>
+
+</html>

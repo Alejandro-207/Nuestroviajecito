@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nuestro pequeño viaje ❤️</title>
+
+
+<style>
+
+body {
+
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#ffd6e7, #ffffff);
+    text-align: center;
+    color: #333;
+    overflow-x: hidden;
+
+}
+
+
+header {
+
+    background: #ff8fb1;
+    color: white;
+    padding: 40px;
+    animation: aparecer 2s;
+
+}
+
+
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+        transform: translateY(-50px);
+
+    }
+
+    to {
+
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+
+}
+
+
+
+h1 {
+
+    font-size: 40px;
+
+}
+
+
+
+.contenedor {
+
+    padding: 30px;
+
+}
+
+
+
+.tarjeta {
+
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
+}
+
+
+
+button {
+
+    background: #ff5c8a;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+
+}
+
+
+button:hover {
+
+    background: #ff2f6d;
+
+}
+
+
+
+img {
+
+    width: 200px;
+    border-radius: 20px;
+    margin: 10px;
+
+}
+
+
+
+#mensaje {
+
+    display: none;
+    margin-top: 20px;
+    font-size: 20px;
+
+}
+
+
+
+/* Recuerdos */
+
+#recuerdos {
+
+    display: none;
+    margin-top: 20px;
+    animation: aparecer 1s;
+
+}
+
+
+
+#recuerdos img {
+
+    width: 180px;
+
+}
+
+
+
+/* Corazones */
+
+.corazon {
+
+    position: fixed;
+    top: -50px;
+    font-size: 40px;
+    animation: caer 5s linear infinite;
+    z-index: 999;
+
+}
+
+
+
+@keyframes caer {
+
+
+    0% {
+
+        transform: translateY(-50px);
+        opacity: 1;
+
+    }
+
+
+    100% {
+
+        transform: translateY(110vh);
+        opacity: 0;
+
+    }
+
+
+}
+
+
+
+footer {
+
+    background: #ff8fb1;
+    color:white;
+    padding:20px;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+
+<body>
+
+
+
+<header>
+
+<h1>Nuestro pequeño viaje ❤️</h1>
+
+<p>Un recuerdo hecho con mucho cariño</p>
+
+</header>
+
+
+
+
+<div class="contenedor">
+
+
+
+<div class="tarjeta">
+
+<h2>Para ti 💕</h2>
+
+<p>
+
+Quiero que sepas que cada momento contigo es especial.
+Gracias por formar parte de mi vida y por todos los recuerdos
+que hemos creado.
+
+</p>
+
+</div>
+
+
+
+
+<div class="tarjeta">
+
+<h2>Nuestros momentos 📸</h2>
+
+<img src="foto1.jpg">
+
+
+<p>
+
+Este pequeño espacio guarda un pedacito de nuestra historia.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="tarjeta">
+
+<h2>Un mensaje para ti 💌</h2>
+
+
+<button onclick="mostrarMensaje()">
+
+Abrir mensaje
+
+</button>
+
+
+
+<p id="mensaje">
+
+Te amo mucho mi bebita ❤️ Gracias por cada sonrisa,
+cada momento y cada recuerdo, enserio gracias mi amor.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+<div class="tarjeta">
+
+
+<h2>Nuestros recuerdos 📸</h2>
+
+
+<a href="album.html">
+    <button>Ver nuestros recuerdos ❤️</button>
+</a>
+
+
+</button>
+
+
+
+<div id="recuerdos">
+
+
+<img src="fotos/foto1.jpg">
+
+<img src="fotos/foto2jpg">
+
+
+
+<p>
+
+Cada foto guarda un momento especial ❤️
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+<footer>
+
+Hecho con cariño ❤️
+
+</footer>
+
+
+
+
+
+<script>
+
+
+function mostrarMensaje(){
+
+document.getElementById("mensaje").style.display="block";
+
+}
+
+
+
+function mostrarRecuerdos(){
+
+document.getElementById("recuerdos").style.display="block";
+
+}
+
+
+
+
+function crearCorazon(){
+
+
+let corazon = document.createElement("div");
+
+
+corazon.className="corazon";
+
+
+corazon.innerHTML="❤️";
+
+
+corazon.style.left=Math.random()*100+"vw";
+
+
+corazon.style.animationDuration=(Math.random()*3+3)+"s";
+
+
+
+document.body.appendChild(corazon);
+
+
+
+setTimeout(()=>{
+
+corazon.remove();
+
+},6000);
+
+
+}
+
+
+
+setInterval(crearCorazon,200);
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

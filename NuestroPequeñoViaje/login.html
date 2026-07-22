@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Acceso ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:Arial, Helvetica, sans-serif;
+background:linear-gradient(135deg,#020617,#312e81,#be185d);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+color:white;
+
+}
+
+.contenedor{
+
+position:relative;
+z-index:2;
+width:90%;
+max-width:450px;
+background:rgba(255,255,255,.1);
+backdrop-filter:blur(15px);
+padding:40px;
+border-radius:30px;
+text-align:center;
+box-shadow:0 0 40px rgba(255,255,255,.2);
+animation:entrada 1.5s ease;
+
+}
+
+h1{
+
+font-size:38px;
+margin-bottom:20px;
+
+}
+
+p{
+
+font-size:18px;
+line-height:1.6;
+margin-bottom:25px;
+
+}
+
+input{
+
+width:100%;
+padding:15px;
+border:none;
+border-radius:30px;
+font-size:18px;
+text-align:center;
+margin-bottom:20px;
+outline:none;
+
+}
+
+button{
+
+padding:15px 35px;
+border:none;
+border-radius:35px;
+font-size:18px;
+cursor:pointer;
+background:#fb7185;
+color:white;
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.05);
+
+}
+
+#error{
+
+margin-top:20px;
+color:#ffd1d1;
+font-weight:bold;
+display:none;
+
+}
+
+#correcto{
+
+display:none;
+margin-top:20px;
+font-size:20px;
+color:#d8ffd8;
+
+}
+
+.estrella{
+
+position:absolute;
+color:white;
+animation:brillar 3s infinite ease-in-out;
+
+}
+
+.corazon{
+
+position:absolute;
+bottom:-30px;
+font-size:25px;
+animation:subir 7s linear infinite;
+
+}
+
+@keyframes brillar{
+
+0%{opacity:.2;transform:scale(.8);}
+50%{opacity:1;transform:scale(1.4);}
+100%{opacity:.2;transform:scale(.8);}
+
+}
+
+@keyframes subir{
+
+from{
+
+transform:translateY(0);
+opacity:1;
+
+}
+
+to{
+
+transform:translateY(-110vh);
+opacity:0;
+
+}
+
+}
+
+@keyframes entrada{
+
+from{
+
+opacity:0;
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+.fade{
+
+animation:desaparecer 1.5s forwards;
+
+}
+
+@keyframes desaparecer{
+
+to{
+
+opacity:0;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="contenedor" id="login">
+
+<h1>🔐 Bienvenida ❤️</h1>
+
+<p>
+
+Antes de comenzar este pequeño viaje...
+
+hay una pequeña llave que abre todos estos recuerdos.
+
+</p>
+
+<p>
+
+Escribe la fecha en la que comenzó esta historia.
+
+</p>
+
+<input type="password" id="clave" placeholder="210725">
+
+<br>
+
+<button onclick="entrar()">
+
+❤️ Entrar
+
+</button>
+
+<div id="error">
+
+❤️ Esa no es la llave correcta... intenta recordar el inicio de esta historia.
+
+</div>
+
+<div id="correcto">
+
+✨ Acceso concedido...
+
+<br><br>
+
+Bienvenida a nuestro pequeño viaje ❤️
+
+</div>
+
+</div>
+
+<script>
+
+for(let i=0;i<90;i++){
+
+let estrella=document.createElement("div");
+
+estrella.className="estrella";
+
+estrella.innerHTML="✦";
+
+estrella.style.left=Math.random()*100+"vw";
+
+estrella.style.top=Math.random()*100+"vh";
+
+estrella.style.fontSize=(8+Math.random()*15)+"px";
+
+estrella.style.animationDelay=Math.random()*3+"s";
+
+document.body.appendChild(estrella);
+
+}
+
+function crearCorazon(){
+
+let corazon=document.createElement("div");
+
+corazon.className="corazon";
+
+corazon.innerHTML="❤️";
+
+corazon.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(corazon);
+
+setTimeout(()=>{
+
+corazon.remove();
+
+},7000);
+
+}
+
+setInterval(crearCorazon,800);
+
+function entrar(){
+
+let clave=document.getElementById("clave").value;
+
+if(clave==="210725"){
+
+document.getElementById("error").style.display="none";
+
+document.getElementById("correcto").style.display="block";
+
+document.getElementById("login").classList.add("fade");
+
+setTimeout(function(){
+
+window.location.href="index.html";
+
+},2000);
+
+}else{
+
+document.getElementById("error").style.display="block";
+
+}
+
+}
+
+document.getElementById("clave").addEventListener("keypress",function(e){
+
+if(e.key==="Enter"){
+
+entrar();
+
+}
+
+});
+
+</script>
+
+</body>
+</html>

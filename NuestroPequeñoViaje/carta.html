@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Una carta para ti ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Georgia, serif;
+    background:linear-gradient(135deg,#111827,#312e81,#4c1d95);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+
+}
+
+
+/* estrellas */
+
+.estrella{
+
+    position:absolute;
+    color:white;
+    animation:brillar 3s infinite ease-in-out;
+    opacity:.4;
+
+}
+
+
+@keyframes brillar{
+
+    0%{
+        opacity:.2;
+        transform:scale(.8);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.3);
+    }
+
+    100%{
+        opacity:.2;
+        transform:scale(.8);
+    }
+
+}
+
+
+/* carta */
+
+.carta{
+
+    position:relative;
+    z-index:2;
+    width:90%;
+    max-width:700px;
+    background:#fff8ed;
+    color:#333;
+    padding:45px;
+    border-radius:20px;
+    box-shadow:0 0 50px rgba(255,255,255,.25);
+    animation:aparecer 1.5s ease;
+
+}
+
+
+h1{
+
+    text-align:center;
+    color:#b91c1c;
+    margin-bottom:30px;
+
+}
+
+
+p{
+
+    font-size:22px;
+    line-height:1.8;
+    margin-bottom:20px;
+
+}
+
+
+
+.firma{
+
+    text-align:right;
+    font-size:24px;
+    margin-top:35px;
+
+}
+
+
+
+button{
+
+    display:block;
+    margin:35px auto 0;
+    padding:15px 35px;
+    border:none;
+    border-radius:40px;
+    font-size:18px;
+    cursor:pointer;
+
+}
+
+
+
+button:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="carta">
+
+
+<h1>💌 Para ti ❤️</h1>
+
+
+<p>
+Quería hacer algo especial para ti,
+algo que pudiera guardar un poquito de todo lo que siento.
+</p>
+
+
+<p>
+Gracias por cada momento, cada conversación,
+cada sonrisa y cada recuerdo que hemos creado.
+</p>
+
+
+<p>
+Hoy quería recordarte lo importante que eres
+y lo feliz que me hace haber podido conocerte.
+</p>
+
+
+<p>
+Después de este pequeño viaje,
+de todos estos recuerdos y de esta canción...
+</p>
+
+
+<p>
+hoy 21 de julio cumpriendo un año de conocerte,quiero preguntarte algo. ❤️
+</p>
+
+
+
+<div class="firma">
+
+Con mucho cariño ❤️
+
+</div>
+
+
+
+<a href="pregunta.html">
+
+<button>
+
+✨ revelar pregunta ✨
+
+</button>
+
+</a>
+
+
+
+</div>
+
+
+
+
+<script>
+
+
+for(let i=0;i<80;i++){
+
+let estrella=document.createElement("div");
+
+estrella.className="estrella";
+
+estrella.innerHTML="✦";
+
+estrella.style.left=Math.random()*100+"vw";
+
+estrella.style.top=Math.random()*100+"vh";
+
+estrella.style.fontSize=(8+Math.random()*15)+"px";
+
+estrella.style.animationDelay=Math.random()*3+"s";
+
+
+document.body.appendChild(estrella);
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
